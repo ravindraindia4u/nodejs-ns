@@ -2,8 +2,9 @@ const express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var MongoClient = require("mongodb");
-var url =
-  "mongodb+srv://root:goldtree9@cluster0-vbvpz.mongodb.net/node_mongo_demo?retryWrites=true&w=majority";
+// var url =
+//   "mongodb+srv://root:goldtree9@cluster0-vbvpz.mongodb.net/node_mongo_demo?retryWrites=true&w=majority";
+var url = "mongodb+srv://root:root@cluster0-efsgl.mongodb.net/node_mongo_demo?retryWrites=true&w=majority";
 
 app.use(bodyParser());
 
@@ -18,10 +19,11 @@ MongoClient.connect(url)
         .toArray()
         .then((result) => {
           //Show in index page
-          res.render("index.handlebars", { result: result });
+          //res.render("index.handlebars", { result: result });
+          console.log(result);
         })
         .catch((err) => {
-          console.log(error);
+          console.log(err);
         });
       res.sendFile(__dirname + "/index.html");
     });
@@ -40,8 +42,8 @@ MongoClient.connect(url)
       res.send();
     });
     //Start The Server
-    app.listen("3001", () => {
-      console.log("Listening on port 3001");
+    app.listen("3000", () => {
+      console.log(`Server is running at http://localhost:3000/`);
     });
   })
   .catch((err) => {
