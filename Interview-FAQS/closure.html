@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Closure</title>
+</head>
+<body>
+    <script>
+        // var a = 10;
+        // function outerFun(){
+        //     var b = 20;
+        //     function innerFun(){
+        //         var sum = a + b;
+        //         document.write(`Sum of two no is ${sum}.`);
+        //     }
+        //     return innerFun;
+        // }
+        // let inner = outerFun();
+        // console.dir(inner);
+        // inner();
+
+        function outerFun(){
+            var count = 0;
+            return {
+                increment: function(){
+                    count++;
+                },
+                print: function(){
+                    console.log(count);
+                }
+            }
+        }
+        var c = outerFun();
+        c.increment();
+        c.print();
+    </script>
+    
+</body>
+</html>

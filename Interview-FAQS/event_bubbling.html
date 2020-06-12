@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+</head>
+<body>
+    <section>
+        <div>
+            <button>click me</button>
+        </div>
+    </section>
+    
+    <script>
+        let button = document.querySelector('button');
+        let div = document.querySelector('div');
+        let sec = document.querySelector('section');
+        //Event bubbling
+        // div.addEventListener('click',()=>{
+        //     console.log('div');
+        // });
+        // sec.addEventListener('click',()=>{
+        //     console.log('section');
+        // });
+        // button.addEventListener('click',()=>{
+        //     console.log('button');
+        // });
+
+        //Event Capturing
+        // div.addEventListener('click',()=>{
+        //     console.log('div');
+        // },true);
+        // sec.addEventListener('click',()=>{
+        //     console.log('section');
+        // },true);
+        // button.addEventListener('click',()=>{
+        //     console.log('button');
+        // },true);
+
+        //Stop Event Propagation
+        //  div.addEventListener('click',()=>{
+        //     console.log('div');
+        // });
+        // sec.addEventListener('click',()=>{
+        //     console.log('section');
+        // });
+        // button.addEventListener('click',event=>{
+        //     event.stopPropagation();
+        //     console.log('button');
+        // });
+
+        // Stop Immediate event propagation
+        button.addEventListener('click',event=>{
+            event.stopImmediatePropagation();
+            console.log('button');
+        });
+
+        button.addEventListener('click',event=>{
+            console.log('button-1');
+        });
+    </script>
+</body>
+</html>

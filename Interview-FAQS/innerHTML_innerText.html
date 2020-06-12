@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference b/w innerText and innerHTML</title>
+</head>
+<body style="text-align: center;">
+    <h1 style="color: green;">Difference between innerText and innerHTML</h1>
+    <div id="test">
+        The following element contains some
+        <code>code</code> and 
+        <italic>some text</italic>.
+        <h2>Ravindra Kumar</h2>
+    </div>
+    <div id="content">
+    </div>
+    <button id="btnText">innerText</button>
+    <button id="btnHTML">innerHTML</button>
+    <script>
+       let btnText = document.getElementById('btnText');
+       let btnHTML = document.getElementById('btnHTML');
+       let test = document.getElementById('test');
+       let content = document.getElementById('content');
+
+       let mystring = "<p>The following element contains some <code>code</code> and <italic>some text</italic>.</p>";
+
+       btnText.addEventListener('click', () =>{
+           //alert(test.innerText);
+           content.innerText = mystring;
+
+       });
+
+       btnHTML.addEventListener('click', () =>{
+           //alert(test.innerHTML);
+           content.innerHTML = mystring;
+       });
+
+    </script>
+</body>
+</html>
