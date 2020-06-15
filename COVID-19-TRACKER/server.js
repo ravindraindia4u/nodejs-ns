@@ -14,9 +14,9 @@ app.engine(
   })
 );
 
-novelCovid.countries().then((response) => {
-  console.log(response);
-});
+// novelCovid.countries().then((response) => {
+//   console.log(response);
+// });
 
 app.get("/", function (req, res) {
   novelCovid.countries().then((response) => {
